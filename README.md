@@ -7,10 +7,10 @@
 ------------------------------------------
 1. [Características 👨‍💻](#características-)
 2. [Tecnologías 👾](#tecnologías-)
-3. [IDE y Herramientas⚙️](#ide-y-herramientas-)
-4. [Arquitectura:diamond_shape_with_a_dot_inside:](#arquitectura-)
-5. [Base de datos :floppy_disk:](#database-)
-6. [Instalacion docker](#instalacion-)
+3. [IDE y Herramientas⚙️](#ide-y-herramientas%EF%B8%8F)
+4. [Arquitectura:diamond_shape_with_a_dot_inside:](#arquitectura-diamond_shape_with_a_dot_inside)
+5. [Base de datos :floppy_disk:](#base-de-datos-floppy_disk)
+6. [Instalacion docker](#instalacion-docker)
 7. [Autor(es) ✒️](#autores-%EF%B8%8F)
 8. [Institución Académica 🏫](#institución-académica-)
 
@@ -44,16 +44,18 @@ Documentación y tutoriales: Se proporcionará una documentación completa y tut
 |   	NOMBRE|   	DESCRIPCIÓN|    ICONO|
 |---	|---	|---   |
 |   	[Visual Studio Code](https://visualstudio.microsoft.com/es/) | 	Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código.|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" height="50px" alt="imagen Visual Studio">| 
-|   	[Java](https://developer.android.com/kotlin?hl=es-419&gclid=Cj0KCQiAsoycBhC6ARIsAPPbeLvVqNjGyqoBKd1M5mB1kkY9ZpKlHF_b1qaLY1BRmapT8dlxGtW4GRQaAjxZEALw_wcB&gclsrc=aw.ds) |  Java es una plataforma informática de lenguaje de programación creada por Sun Microsystems en 1995. Ha evolucionado desde sus humildes comienzos hasta impulsar una gran parte del mundo digital actual, ya que es una plataforma fiable en la que se crean muchos servicios y aplicaciones.|<img src="https://static.vecteezy.com/system/resources/previews/019/899/953/non_2x/java-free-download-free-png.png" height="50px" alt="imagen Java">|
-|     [Go](https://expressjs.com/es/) | Go es un lenguaje de programación concurrente y compilado con tipado estático inspirado en la sintaxis de C, pero con seguridad de memoria y recolección de basura. Ha sido desarrollado por Google​ y sus diseñadores iniciales fueron Robert Griesemer, Rob Pike y Ken Thompson.​|<img src="https://o.remove.bg/downloads/4114ea88-a635-48cc-a2b6-60c51f4f281e/image-removebg-preview.png" height="50px" alt="imagen de Go">|
-|     [C#](https://expressjs.com/es/) |  C# qué es. Es un lenguaje de programación multiparadigma desarrollado por Microsoft, que evoluciona de la familia de lenguajes C -como su nombre indica- tomando lo mejor de los lenguajes C y C++ y que se asemeja mucho a lenguajes de alto nivel de abstracción como Java y JavaScript. Forma parte de la plataforma .|<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" height="50px" alt="imagen de C sharp">|
-|     [Javascript](https://expressjs.com/es/) |  JavaScript es un lenguaje de programación que los desarrolladores utilizan para hacer páginas web interactivas. Desde actualizar fuentes de redes sociales a mostrar animaciones y mapas interactivos, las funciones de JavaScript pueden mejorar la experiencia del usuario de un sitio web.|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" height="50px" alt="imagen de Javascript">|
-|     [Phyton](https://expressjs.com/es/) |  Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, ejemplos: Instagram, Netflix, Spotify, Panda3D, entre otros.​ |<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" height="50px" alt="imagen de Phyton">|
+|   	[Java](https://www.java.com/es/) |  Java es una plataforma informática de lenguaje de programación creada por Sun Microsystems en 1995. Ha evolucionado desde sus humildes comienzos hasta impulsar una gran parte del mundo digital actual, ya que es una plataforma fiable en la que se crean muchos servicios y aplicaciones.|<img src="https://static.vecteezy.com/system/resources/previews/019/899/953/non_2x/java-free-download-free-png.png" height="50px" alt="imagen Java">|
+|     [Go](https://go.dev/) | Go es un lenguaje de programación concurrente y compilado con tipado estático inspirado en la sintaxis de C, pero con seguridad de memoria y recolección de basura. Ha sido desarrollado por Google​ y sus diseñadores iniciales fueron Robert Griesemer, Rob Pike y Ken Thompson.​|<img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" height="50px" alt="imagen de Go">|
+|     [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) |  C# qué es. Es un lenguaje de programación multiparadigma desarrollado por Microsoft, que evoluciona de la familia de lenguajes C -como su nombre indica- tomando lo mejor de los lenguajes C y C++ y que se asemeja mucho a lenguajes de alto nivel de abstracción como Java y JavaScript. Forma parte de la plataforma .|<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" height="50px" alt="imagen de C sharp">|
+|     [Javascript](https://lenguajejs.com/javascript/) |  JavaScript es un lenguaje de programación que los desarrolladores utilizan para hacer páginas web interactivas. Desde actualizar fuentes de redes sociales a mostrar animaciones y mapas interactivos, las funciones de JavaScript pueden mejorar la experiencia del usuario de un sitio web.|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" height="50px" alt="imagen de Javascript">|
+|     [Python](https://www.python.org/) |  Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, ejemplos: Instagram, Netflix, Spotify, Panda3D, entre otros.​ |<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" height="50px" alt="imagen de Phyton">|
 
 ------------------------------------------
 #### Arquitectura :diamond_shape_with_a_dot_inside:
 
 ![image](https://github.com/its-Quasi/multiple-same-apps/assets/89582094/ae2eeda1-9259-4aaa-bffd-7083a79e11a2)
+
+Se ha utilizado la arquitectura Orientada a la interacción, con su implementación en MVC o MVT (para algunos lenguajes).
 
 MVC (Modelo-Vista-Controlador):
 MVC es un patrón de arquitectura de software que separa una aplicación en tres componentes principales: el modelo, la vista y el controlador.
@@ -75,24 +77,14 @@ Ambas arquitecturas tienen como objetivo principal separar las preocupaciones y 
 
 ------------------------------------------
 #### Base de datos :floppy_disk:
+
+La base de datos se encuentra desplegada en la nube en un servidor propio para la realización de pruebas sin tener cambios en cada aplicación, en caso de desear hacer su propia base de datos o utilizar otro proveedor, se deja a disposición el modelo de la base de datos para su réplica.
+
 ![image](https://github.com/its-Quasi/multiple-same-apps/assets/89582094/077ddc2e-b2f5-4aab-8345-0640008ddbfc)
 
 ------------------------------------------
 #### Instalacion docker 
 
-* Para el caso de Java verificamos en que version de java se encuentra el proyecto, en este caso java 17.
-* Hacemos build al proyecto para que construya el archivo .jar.
-* Creamos un archivo *Dockerfile* en la raiz del proyecto *Springtasks* con una imagen de acuerdo a la version del jdk de java y con la ruta del archivo .jar.
-
-```yaml
-
-FROM eclipse-temurin:17-jdk-alpine
-COPY "./target/springtasks.jar" "app.jar"
-ADD target/springtasks.jar springtasks.jar
-EXPOSE 8000
-ENTRYPOINT ["java","-jar","app.jar"]
-
-```
 * Abrimos una terminal en la raiz de nuestro proyecto y ejecutamos el comando para crear la imagen del docker:
 ```shell
 $ docker build -t "nombre-imagen-docker" .
