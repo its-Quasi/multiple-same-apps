@@ -6,6 +6,11 @@ body {
     background-color: #121212 !important;
 }
 
+.task-done {
+    text-decoration: line-through;
+    color: #fff;
+}
+
 .card-body {
     border-radius: 5px !important;
 }

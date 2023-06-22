@@ -9,6 +9,8 @@
         public DateTime entrega { get; set; }
         public int idEstado { get; set; }
         public string? estado { get; set; }
+        public string? nombreTarea { get; set; }
+        public int idMateria { get; set; }
 
     }
 }

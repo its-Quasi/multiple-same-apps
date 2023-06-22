@@ -1,9 +1,11 @@
-﻿@{
+﻿@model List<TareaModel>;
+@{
     ViewData["Title"] = "Gestor de Tareas";
+    var materia = ViewData["materia"] as MateriaModel;
 }
 
 <div class="container align-self-start mt-2">
-    <a id="btnAddTask" href="/" class="btn btn-primary bg-dark">Volver Al Inicio</a>
+    <a href="/" class="btn btn-primary bg-dark">Volver Al Inicio</a>
 </div>
 
  <section class="vh-100">
@@ -16,9 +18,9 @@
 
                         <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
                             <i class="fas fa-check-square me-1"></i>
-                            <u> Todo</u>
+                            <u id="idNombreMateria" data-bs-idMateria="@materia.idMateria">@materia.nombre Todo</u>
                         </p>
-
+                        
                         <div class="pb-2 ">
                             <div class="card">
                                 <div class="card-body bg-dark">
@@ -26,15 +28,16 @@
                                         class="d-flex flex-row align-items-center">
                                         <input type="text" id="descripcion" name="descripcion"
                                             class="form-control form-control-lg bg-dark text-light"
-                                            id="exampleFormControlInput1" placeholder="Add new Task...">
+                                            placeholder="Add new Task..." value="">
                                         <input type="date" id="due-date" name="due-date" />
-                                        <input type="hidden" name="id-subject" value="{{subject.id}}">
+                                        <input type="hidden" name="id-subject" value="@materia.idMateria">
                                         <input type="hidden" name="id-status" value="1">
                                         <button type="submit" id="btnAddTask" class="btn btn-primary">Add</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                        
 
                         <hr class="my-4">
 
@@ -43,37 +46,35 @@
                             <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip"><i
                                     class="fas fa-sort-amount-down-alt ms-2"></i></a>
                         </div>
-                    
+                        @foreach(var item in Model)
+                        {
                         <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
                             <li
                                 class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
-                                <form id="formStatus" action="/updateStatusTask/" class="form-check">    
-                                    <input class="form-check-input me-0" type="checkbox" value="" onclick="changeStatus({{task.id}})" 
-                                        {%if task.id_estado.id == 2 %} checked {%endif%}
-                                    />
-                                </form>
+                                <input class="form-check-input me-0" type="checkbox" value="" onclick="changeStatus(@item.idTarea)"/>
                             </li>
                             <li
                                 class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                <p class="lead fw-normal mb-0 text-light">
-                                    
+                                    <p class="lead fw-normal mb-0 text-light" id="task_@item.idTarea">
+                                    @item.descripcion
                                 </p>
                             </li>
                             <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                                 <div class="d-flex flex-row justify-content-end mb-1">
-                                    <a href="" class="text-danger"
+                                    <a onclick="deleteTask(@item.idTarea,@materia.idMateria)" class="text-danger"
                                         data-mdb-toggle="tooltip" title="Delete todo"><i
                                             class="fas fa-trash-alt"></i></a>
                                 </div>
                                 <div class="text-end text-muted">
                                     <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Due date">
                                         <p class="small mb-0 text-light"><i class="fas fa-info-circle me-2"></i>
-                                            
+                                            @item.entrega
                                         </p>
                                     </a>
                                 </div>
                             </li>
                         </ul>
+                        }
                         
                     </div>
                 </div>
@@ -83,5 +84,5 @@
 </section>
 
 <!-- scripts -->
-<script src="~/js/taskHandler.js"></script>
+<script src="/js/taskHandler.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>

@@ -15,7 +15,8 @@ namespace Backend.Datos
             using (var conexion = new MySqlConnection(cn.getCadenaSQL())){
                 conexion.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT t.idTarea, t.descripcion, t.nombre, t.prioridad, t.entrega, e.estado, mt.idMateria FROM tarea t " +
-                    "INNER JOIN materia_tarea mt on (t.idTarea = mt.idTarea) INNER JOIN estado e ON (e.id = t.idEstado) WHERE mt.idMateria = @param1", conexion);
+                    "INNER JOIN materia_tarea mt on (t.idTarea = mt.idTarea) INNER JOIN estado e ON (e.id = t.idEstado) " +
+                    "INNER JOIN materia m ON (mt.idMateria = m.idMateria) WHERE mt.idMateria = @param1", conexion);
                 cmd.Parameters.AddWithValue("@param1", id);
                 using (var dr = cmd.ExecuteReader()){
                     while (dr.Read()){
@@ -45,15 +46,41 @@ namespace Backend.Datos
                     cmd.Parameters.AddWithValue("@param2", tarea.nombre);
                     cmd.Parameters.AddWithValue("@param3", tarea.prioridad);
                     cmd.Parameters.AddWithValue("@param4", tarea.entrega);
-                    cmd.Parameters.AddWithValue("@param5", tarea.idEstado);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@param5", 1);
                     cmd.ExecuteNonQuery();
-
-                    rpta = true;
+                    long id = cmd.LastInsertedId;
+                    tarea.idTarea = (int) id;
+                    rpta = this.guardarTareaMateria(tarea);
                 }
             }
             catch(Exception ex){
                 string error = ex.Message;
+                Console.WriteLine("Error!! " + error);
+                rpta = false;
+            }
+            return rpta;
+        }
+
+        public bool guardarTareaMateria(TareaModel tarea)
+        {
+            bool rpta;
+            try
+            {
+                var cn = new Conexion();
+                using (var conexion = new MySqlConnection(cn.getCadenaSQL()))
+                {
+                    conexion.Open();
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO materia_tarea (idTarea, idMateria) VALUES(@param1, @param2) ", conexion);
+                    cmd.Parameters.AddWithValue("@param1", tarea.idTarea);
+                    cmd.Parameters.AddWithValue("@param2", tarea.idMateria);
+                    cmd.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                Console.WriteLine("Error!! " + error);
                 rpta = false;
             }
             return rpta;
@@ -74,7 +101,6 @@ namespace Backend.Datos
                     cmd.Parameters.AddWithValue("@param4", tarea.entrega);
                     cmd.Parameters.AddWithValue("@param5", tarea.idEstado);
                     cmd.Parameters.AddWithValue("@param6", tarea.idTarea);
-                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
 
                     rpta = true;
@@ -87,7 +113,7 @@ namespace Backend.Datos
             }
             return rpta;
         }
-        public bool Eliminar(int idTarea){
+        public bool Eliminar(int idTarea, int idMateria){
             bool rpta;
             try
             {
@@ -95,9 +121,9 @@ namespace Backend.Datos
                 using (var conexion = new MySqlConnection(cn.getCadenaSQL()))
                 {
                     conexion.Open();
-                    MySqlCommand cmd = new MySqlCommand("DELETE FROM tarea WHERE idTarea=@param1", conexion);
+                    MySqlCommand cmd = new MySqlCommand("DELETE FROM materia_tarea WHERE idTarea=@param1 AND idMateria=@param2", conexion);
                     cmd.Parameters.AddWithValue("@param1", idTarea);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@param2", idMateria);
                     cmd.ExecuteNonQuery();
 
                     rpta = true;

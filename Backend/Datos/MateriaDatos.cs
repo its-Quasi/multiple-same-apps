@@ -35,6 +35,7 @@ namespace Backend.Datos
             {
                 conexion.Open();
                 MySqlCommand cmd = new MySqlCommand("Select * from materia WHERE idMateria = @param1", conexion);
+                cmd.Parameters.AddWithValue("@param1", id);
                 using (var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())

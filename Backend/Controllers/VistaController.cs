@@ -8,11 +8,13 @@ namespace Backend.Controllers
     public class VistaController : Controller
     {
         TareaDatos tareaDatos = new TareaDatos();
+        MateriaDatos materiaDatos = new MateriaDatos();
 
         [HttpGet("/listarTareas/{id}")]
         public IActionResult Index([FromRoute] int id)
         {
             List<TareaModel> lista = tareaDatos.listarPorId(id);
+            ViewData["materia"] = materiaDatos.listarPorId(id);
             return View("tasklist", lista);
         }
     }
