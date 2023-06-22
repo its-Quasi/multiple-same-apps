@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/index.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css"
+        integrity="sha512-UJqci0ZyYcQ0AOJkcIkUCxLS2L6eNcOr7ZiypuInvEhO9uqIDi349MEFrqBzoy1QlfcjfURHl+WTMjEdWcv67A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <form class="input-group mb-3 mt-5" id="formSubject" action="/agregarMateria" method="POST">
+        <input id="nombre" name="nombre" type="text" class="form-control bg-dark text-light "
+            placeholder="Agrega una Nueva Asignatura" required>
+        <button type="submit" class="btn btn-success">Agregar</button>
+    </form>
+
+    <div class="ag-courses_box">
+        {{#each materias}}
+        <div class="ag-courses_item">
+            <div class="ag-courses-item_link">
+                <a href="tareas/{{idMateria}}" class="link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">{{nombre}}</div>
+                </a>
+                <div class="ag-courses-item_date-box">
+                    <span class="ag-courses-item_date">
+                        <a type="button" class="btn  actions" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal-{{idMateria}}" data-bs-name="{{nombre}}"
+                            data-bs-id="{{idMateria}}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="actions" href="borrarMateria/{{idMateria}}"
+                            onclick="event.preventDefault(); confirmDelete('{{idMateria}}');">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+
+                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                        <script>
+                            function confirmDelete(idMateria) {
+                                Swal.fire({
+                                    title: '¿Estás seguro?',
+                                    text: 'Esta acción eliminará la materia',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Sí, eliminar',
+                                    cancelButtonText: 'Cancelar'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.href = `borrarMateria/${idMateria}`;
+                                    }
+                                });
+                            }
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal-{{idMateria}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Actualizar Materia</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formUpdateSubject" action="actualizarMateria/{{idMateria}}" method="POST">
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Nombre de la materia</label>
+                                <input type="text" class="form-control bg-dark text-light" id="nombre" name="nombre"
+                                    value="{{nombre}}">
+
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="submit">Actualizar Materia</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <script src="/js/inputHandler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
