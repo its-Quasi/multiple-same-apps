@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.0/css/all.min.css"
+        integrity="sha512-UJqci0ZyYcQ0AOJkcIkUCxLS2L6eNcOr7ZiypuInvEhO9uqIDi349MEFrqBzoy1QlfcjfURHl+WTMjEdWcv67A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <!-- <div class="input-group mb-3 mt-5"> -->
+    <form class="input-group mb-3 mt-5" id="formSubject" action="/registerSubject/" method="POST">{%csrf_token%}
+        <input id="inputSubject" name="inputSubject" type="text" class="form-control bg-dark text-light "
+            placeholder="Agrega una Nueva Asignatura" required>
+        <button type="submit" class="btn btn-success" type="button" id="btnSubjects">Agregar</button>
+    </form>
+    <!-- </div> -->
+
+    <div class="ag-courses_box">
+
+        {% if subjects|length == 0 %}
+        <div class="no-subjects">
+            <p class="text-muted">No subjects yet</p>
+            <i id="icon" class="fas fa-empty-set fa-lg" style="color: #b5b5b5;"></i>
+        </div>
+        {% endif %}
+
+        {% for subject in subjects %}
+
+        <div class="ag-courses_item">
+            <div class="ag-courses-item_link">
+                <a href="getTasklist/{{subject.id}}" class="link">
+                    <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">{{subject.nombre}}</div>
+                </a>
+                <div class="ag-courses-item_date-box">
+                    <span class="ag-courses-item_date">
+                        <a class="actions" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-bs-name="{{subject.nombre}}" data-bs-id="{{subject.id}}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="actions" href="deleteSubject/{{subject.id}}">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TODO: como enviar, para que ese boton mande lo del form, sueñooo-->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formUpdateSubject" action="updateSubject/" method="POST">{%csrf_token%}
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Name</label>
+                                <input type="text" class="form-control bg-dark text-light" id="recipient-name" name = "recipient-name">
+                                <input type="hidden" class="form-control bg-dark text-light" id="recipient-id" name = "recipient-id">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="btnUpdate">Update Name</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+    <!-- scripts -->
+    <script src="{% static 'js/inputHandler.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

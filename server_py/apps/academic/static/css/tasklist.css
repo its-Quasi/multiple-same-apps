@@ -1,0 +1,55 @@
+body {
+    background-color: #000 !important;
+}
+
+.color {
+    background-color: #121212 !important;   
+}
+
+.card-body{
+    border-radius: 5px !important;
+}
+#descripcion{
+    font-size: 20px;
+}
+
+#list1 .form-control {
+    border-color: transparent;
+}
+
+#list1 .form-control:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#list1 .select-input.form-control[readonly]:not([disabled]) {
+    background-color: #fbfbfb;
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input[type="date"]{
+    background-color: #3b71ca;
+    padding: 5px;
+    margin-right: 3px;
+        /* position: absolute; */
+    /* transform: translate(-50%,-50%); */
+ 
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 3px;
+}
