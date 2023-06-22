@@ -27,8 +27,8 @@
                         <div class="card-body py-4 px-4 px-md-5">
 
                             <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
-                                <i class="fas fa-check-square me-1"></i>
-                                <u>{{subject.nombre}} Todo</u>
+                                <i class="fas fa-check-square me-1" style="color: #eff1f2;"></i>
+                                <u style="color: #eff1f2; text-decoration: none;">{{subject.nombre}} To-do</u>
                             </p>
 
                             <div class="pb-2 ">
@@ -64,13 +64,12 @@
                                     class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
                                     <form id="formStatus" action="/updateStatusTask/" class="form-check">
                                         <input class="form-check-input me-0" type="checkbox" value=""
-                                            onclick="changeStatus({{task.id}})" {%if task.id_estado.id==2 %} checked
-                                            {%endif%} />
+                                            onclick="changeStatus({{task.id}})" {%if task.id_estado.id == 2 %} checked {%endif%} />
                                     </form>
                                 </li>
                                 <li
                                     class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                    <p class="lead fw-normal mb-0 text-light">
+                                    <p class="lead fw-normal mb-0 text-light" id="task{{task.id}}">
                                         {{task.descripcion}}
                                     </p>
                                 </li>

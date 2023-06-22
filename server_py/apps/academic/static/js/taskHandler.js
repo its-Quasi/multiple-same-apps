@@ -35,6 +35,11 @@ const showErrorMessage = (msgError) => {
 
 
 const changeStatus = (task_id) => {
+    const txtTask = document.getElementById('task' + task_id);
+    if (txtTask.classList.contains('task-done')) {
+        txtTask.classList.remove('task-done');
+    }
+    else txtTask.classList.add('task-done');
     statusChange.action += task_id;
     statusChange.submit();
 }
