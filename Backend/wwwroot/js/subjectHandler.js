@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
                 materias += `
                 <div class="ag-courses_item">
                     <div class="ag-courses-item_link">
-                    <a href="#" class="link">
+                    <a href="/listarTareas/${materia.idMateria}" class="link">
                         <div class="ag-courses-item_bg"></div>
                         <div class="ag-courses-item_title">${materia.nombre}</div>
                     </a>

@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Gestor de Tareas";
+}
+
+<div class="container align-self-start mt-2">
+    <a id="btnAddTask" href="/" class="btn btn-primary bg-dark">Volver Al Inicio</a>
+</div>
+
+ <section class="vh-100">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col ">
+                <div class="card text-light color" id="list1"
+                    style="border-radius: .75rem; background-color: #eff1f2;">
+                    <div class="card-body py-4 px-4 px-md-5">
+
+                        <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                            <i class="fas fa-check-square me-1"></i>
+                            <u> Todo</u>
+                        </p>
+
+                        <div class="pb-2 ">
+                            <div class="card">
+                                <div class="card-body bg-dark">
+                                    <form id ="formRegisterTask" action="/registerTask/" method="POST"
+                                        class="d-flex flex-row align-items-center">
+                                        <input type="text" id="descripcion" name="descripcion"
+                                            class="form-control form-control-lg bg-dark text-light"
+                                            id="exampleFormControlInput1" placeholder="Add new Task...">
+                                        <input type="date" id="due-date" name="due-date" />
+                                        <input type="hidden" name="id-subject" value="{{subject.id}}">
+                                        <input type="hidden" name="id-status" value="1">
+                                        <button type="submit" id="btnAddTask" class="btn btn-primary">Add</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
+                            <p class="small mb-0 ms-4 me-2 text-light">Sort by Due Date</p>
+                            <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip"><i
+                                    class="fas fa-sort-amount-down-alt ms-2"></i></a>
+                        </div>
+                    
+                        <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                            <li
+                                class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                                <form id="formStatus" action="/updateStatusTask/" class="form-check">    
+                                    <input class="form-check-input me-0" type="checkbox" value="" onclick="changeStatus({{task.id}})" 
+                                        {%if task.id_estado.id == 2 %} checked {%endif%}
+                                    />
+                                </form>
+                            </li>
+                            <li
+                                class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                                <p class="lead fw-normal mb-0 text-light">
+                                    
+                                </p>
+                            </li>
+                            <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                <div class="d-flex flex-row justify-content-end mb-1">
+                                    <a href="" class="text-danger"
+                                        data-mdb-toggle="tooltip" title="Delete todo"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                </div>
+                                <div class="text-end text-muted">
+                                    <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Due date">
+                                        <p class="small mb-0 text-light"><i class="fas fa-info-circle me-2"></i>
+                                            
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- scripts -->
+<script src="~/js/taskHandler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>

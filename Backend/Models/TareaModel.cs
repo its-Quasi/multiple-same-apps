@@ -8,5 +8,7 @@
         public int prioridad { get; set; }
         public DateTime entrega { get; set; }
         public int idEstado { get; set; }
+        public string? estado { get; set; }
+
     }
 }
