@@ -1,5 +1,5 @@
 ------------------------------------------
-### Trello App
+### Docker Demos
 
 ------------------------------------------
 
@@ -13,11 +13,22 @@
 6. [Instalacion docker](#instalacion-)
 7. [Autor(es) ✒️](#autores-%EF%B8%8F)
 8. [Institución Académica 🏫](#institución-académica-)
-9. [Referencias 📖](#referencias-)
 
 ------------------------------------------
 #### Características 👨‍💻
-  - La idea de este conjunto de aplicativos, es facilitar el uso de docker independientemente del lenguaje de programación que se maneje.
+  - El proyecto tiene como objetivo principal facilitar el uso de Docker a los estudiantes de primeros semestres, sin importar el lenguaje de programación que estén utilizando. La finalidad es proporcionarles las herramientas necesarias para que les resulte más sencillo conectar sus aplicaciones a la nube y evitar problemas al ejecutar sus programas en máquinas diferentes a aquellas en las que desarrollaron inicialmente el aplicativo.
+
+A continuación, se detallan las características clave del proyecto:
+
+Accesibilidad para estudiantes de primeros semestres: El proyecto está diseñado pensando en estudiantes que están comenzando en el mundo de la programación, por lo que se debe presentar de manera amigable y comprensible. Se evitan conceptos complejos y se ofrecen instrucciones claras para que los estudiantes puedan familiarizarse rápidamente con Docker.
+
+Independencia del lenguaje de programación: El enfoque del proyecto es brindar soporte a estudiantes que utilizan diferentes lenguajes de programación, como Python, Java, JavaScript, C++, entre otros. Esto significa que las instrucciones y herramientas proporcionadas deben ser flexibles y adaptarse a las necesidades específicas de cada lenguaje.
+
+Enlace con la nube: Se busca enseñar a los estudiantes cómo conectar sus aplicaciones a la nube utilizando Docker. Esto implica proporcionar información sobre la configuración adecuada de contenedores, volúmenes, redes y otros aspectos relevantes para el despliegue en la nube. Además, se pueden presentar opciones populares de servicios en la nube para facilitar el proceso de despliegue.
+
+Portabilidad y compatibilidad: El proyecto busca asegurar que las aplicaciones desarrolladas por los estudiantes en sus máquinas locales puedan ejecutarse sin problemas en diferentes entornos. Docker brinda la capacidad de encapsular todas las dependencias necesarias dentro de un contenedor, lo que garantiza que las aplicaciones se ejecuten de manera consistente y sin conflictos en máquinas diferentes.
+
+Documentación y tutoriales: Se proporcionará una documentación completa y tutoriales paso a paso para guiar a los estudiantes en el uso de Docker y en el despliegue de sus aplicaciones en la nube. La documentación debe ser clara, concisa y fácil de seguir, y los tutoriales deben incluir ejemplos prácticos que aborden los desafíos comunes que los estudiantes pueden encontrar durante el proceso.
 
 ------------------------------------------
 
@@ -59,6 +70,9 @@ La plantilla es una representación de la vista en un formato que puede ser envi
 En el patrón MVT, a diferencia de MVC, la plantilla se ocupa de parte de la responsabilidad de la vista en términos de la generación del contenido que se muestra al usuario. El modelo y la vista siguen siendo responsables de sus funciones respectivas, pero la plantilla ayuda en la presentación de los datos en la interfaz de usuario.
 
 Ambas arquitecturas tienen como objetivo principal separar las preocupaciones y mejorar la estructura y mantenibilidad del código en aplicaciones web, pero difieren en la forma en que se organiza y se asignan las responsabilidades entre los componentes.
+
+![image](https://github.com/its-Quasi/multiple-same-apps/assets/89582094/6ffd2da5-2a8d-4bab-bec1-d034ce15ec13)
+
 ------------------------------------------
 #### Base de datos :floppy_disk:
 ![image](https://github.com/its-Quasi/multiple-same-apps/assets/89582094/077ddc2e-b2f5-4aab-8345-0640008ddbfc)
@@ -100,11 +114,5 @@ Proyecto desarrollado por:
 #### Institución Académica 🏫
 Página web desarrollada para la materia Arquitectura de software del [Programa de Ingeniería de Sistemas](<https://ingsistemas.cloud.ufps.edu.co/>) de la [Universidad Francisco de Paula Santander](<https://ww2.ufps.edu.co/>).
 
-
-------------------------------------------
-#### Referencias 📖
-###### Android Studio. (2022). Wikipedia, La enciclopedia libre, desde https://es.wikipedia.org/wiki/Microsoft_Visual_Studio.
-###### Kotlin. (2022). Wikipedia, La enciclopedia libre, desde https://es.wikipedia.org/wiki/Bootstrap_(framework).
-###### Firebase. (2022). Wikipedia, La enciclopedia libre, desde https://en.wikipedia.org/wiki/Express.js.
 
 ------------------------------------------
