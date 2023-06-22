@@ -10,9 +10,10 @@
 3. [IDE y Herramientas⚙️](#ide-y-herramientas-)
 4. [Arquitectura:diamond_shape_with_a_dot_inside:](#arquitectura-)
 5. [Base de datos :floppy_disk:](#database-)
-6. [Autor(es) ✒️](#autores-%EF%B8%8F)
-7. [Institución Académica 🏫](#institución-académica-)
-8. [Referencias 📖](#referencias-)
+6. [Instalacion docker](#instalacion-)
+7. [Autor(es) ✒️](#autores-%EF%B8%8F)
+8. [Institución Académica 🏫](#institución-académica-)
+9. [Referencias 📖](#referencias-)
 
 ------------------------------------------
 #### Características 👨‍💻
@@ -42,6 +43,32 @@
 #### Arquitectura :diamond_shape_with_a_dot_inside:
 ------------------------------------------
 #### Base de datos :floppy_disk:
+------------------------------------------
+#### Instalacion docker 
+
+* Para el caso de Java verificamos en que version de java se encuentra el proyecto, en este caso java 17.
+* Hacemos build al proyecto para que construya el archivo .jar.
+* Creamos un archivo *Dockerfile* en la raiz del proyecto *Springtasks* con una imagen de acuerdo a la version del jdk de java y con la ruta del archivo .jar.
+
+```yaml
+
+FROM eclipse-temurin:17-jdk-alpine
+COPY "./target/springtasks.jar" "app.jar"
+ADD target/springtasks.jar springtasks.jar
+EXPOSE 8000
+ENTRYPOINT ["java","-jar","app.jar"]
+
+```
+* Abrimos una terminal en la raiz de nuestro proyecto y ejecutamos el comando para crear la imagen del docker:
+```shell
+$ docker build -t "nombre-imagen-docker" .
+```
+* Posteriormente ejecutamos el comando para crear el contenedor:
+```shell
+$ docker run --name nombre-contenedor-docker -p 8000:8000 nombre-imagen-docker:latest .
+```
+* Y ya estaría creado el docker escuchando en el puerto 8000.
+
 ------------------------------------------
 #### Autores ✒️
 Proyecto desarrollado por:
