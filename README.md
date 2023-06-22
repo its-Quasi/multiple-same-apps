@@ -109,6 +109,7 @@ Proyecto desarrollado por:
 - Santiago Felipe Alferez Villamizar (**santiagofelipeavil@ufps.edu.co**)
 - Carlos Eduardo Contreras Mendoza (**carloseduardocmen@ufps.efu.co**)
 - Harold Rueda Antolinez (**haroldrant@ufps.edu.co**)
+- Marlon Stiven Prado Rodriguez (**marlonstivenprod@ufps.edu.co**)
 - Oscar Ivan Bayona Diaz (**oscarivanbdia@ufps.edu.co**)
 ------------------------------------------
 #### Institución Académica 🏫
