@@ -1,0 +1,42 @@
+﻿@model MateriaModel;
+@{
+    ViewData["Title"] = "Gestor de Tareas";
+}
+<form method="post" id="materiaForm">
+    <div class="input-group mb-3 mt-5">
+        <input asp-for="nombre" id="inputSubject" type="text" class="form-control bg-dark text-light "
+               placeholder="Agrega una Nueva Asignatura">
+        <button class="btn btn-success" type="button" id="btnSubjects" onclick="addSubject();">Agregar</button>
+    </div>
+</form>
+
+    <div class="ag-courses_box" id="listaMaterias">
+    </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Materia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Nombre Materia</label>
+                        <input type="text" class="form-control bg-dark text-light" id="nombreMateria" name="nombreMateria">
+                        <input type="hidden" class="form-control bg-dark text-light" id="idMateria" name="idMateria">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate">Actualizar Nombre</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- scripts -->
+<script src="js/subjectHandler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
